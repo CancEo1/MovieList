@@ -10,14 +10,18 @@ def display_menu():
 
 # Make a list of the movies with multi-dimensional array
 def list_movies(movie_list):
-    for movie in movie_list:
-        for item in movie:
-            print(item, end=" | ")
+    if len(movie_list) == 0:
+        print("No movies in the list.\n")
+    else:
+        for i, movie in enumerate(movie_list, start=1):
+            print(f"{i}. {movie[0]} ({movie[1]})")
         print()
 
 # Function to add a movie
 def add_movie(movie_list):
-    movie = input("Name: ")
+    name = input("Name: ")
+    year = input("Year: ")
+    movie = [name, year]
     movie_list.append(movie)
     print(f"{movie} was added.\n")
 # Remove movie

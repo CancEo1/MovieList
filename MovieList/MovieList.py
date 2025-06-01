@@ -1,0 +1,53 @@
+# Program to add, delete, and view movies in a list.
+# 
+def display_menu():
+    print("Movie List Menu:")
+    print("list - List all movies")
+    print("add - Add a movie")
+    print("remove - Remove a movie")
+    print("exit - Exit the program")
+    print()
+
+def list_movies(movie_list):
+    for i, movie in enumerate(movie_list, start = 1):
+        print(f"{i}. {movie}")
+    print()
+
+def add_movie(movie_list):
+    movie = input("Name: ")
+    movie_list.append(movie)
+    print(f"{movie} was added.\n")
+
+def remove_movie(movie_list):
+    number = int(input("Number: "))
+    if number < 1 or number > len(movie_list):
+        print("Invalid number.\n")
+    else:
+        movie = movie_list.pop(number - 1)
+        print(f"{movie} was removed.\n")
+
+def main():
+    movie_list = ["The Shawshank Redemption",
+        "The Godfather",
+        "The Dark Knight",
+        "Pulp Fiction",
+        "Forrest Gump"]
+
+    display_menu()
+
+    while True:
+        command = input("Command:")
+        if command.lower() == "list":
+            list(movie_list)
+        elif command.lower() == "add":
+            add_movie(movie_list)
+        elif command.lower() == "remove":
+            remove_movie(movie_list)
+        elif command.lower() == "exit":
+            break
+        else:
+            print("Not a valid command. Please Try again.\n")
+    print("Goodbye!")
+
+if __name__ == "__main__":
+    main()

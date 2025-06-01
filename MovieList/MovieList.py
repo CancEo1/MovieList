@@ -9,9 +9,10 @@ def display_menu():
     print()
 
 def list_movies(movie_list):
-    for i, movie in enumerate(movie_list, start = 1):
-        print(f"{i}. {movie}")
-    print()
+    for movie in movie_list:
+        for item in movie:
+            print(item, end=" | ")
+        print()
 
 def add_movie(movie_list):
     movie = input("Name: ")
@@ -38,7 +39,7 @@ def main():
     while True:
         command = input("Command:")
         if command.lower() == "list":
-            list(movie_list)
+            list_movies(movie_list)
         elif command.lower() == "add":
             add_movie(movie_list)
         elif command.lower() == "remove":

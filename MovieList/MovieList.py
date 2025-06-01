@@ -27,11 +27,11 @@ def remove_movie(movie_list):
         print(f"{movie} was removed.\n")
 
 def main():
-    movie_list = ["The Shawshank Redemption",
-        "The Godfather",
-        "The Dark Knight",
-        "Pulp Fiction",
-        "Forrest Gump"]
+    movie_list = [["The Shawshank Redemption", 1982, 10],
+        ["The Godfather", 1972, 10],
+        ["The Dark Knight", 2008, 9.5],
+        ["Pulp Fiction", 1994, 8],
+        ["Forrest Gump", 1994, 10]]
 
     display_menu()
 
